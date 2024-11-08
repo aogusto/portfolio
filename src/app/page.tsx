@@ -41,7 +41,7 @@ export default function Home() {
     });
 
     return () => controlsStep1.stop();
-  });
+  }, []);
 
   return (
     <div className="w-full h-svh flex flex-col sm:justify-center sm:items-center gap-8 p-8 text-center sm:text-start">
@@ -72,16 +72,16 @@ export default function Home() {
       >
         <TechnologyCard name="React" alt="React Logo" src="/svgs/react-2.svg" />
         <TechnologyCard
-          name="Next JS"
-          alt="Next Logo"
-          src="/svgs/next-js.svg"
-        />
-        <TechnologyCard
           name="Typescript"
           alt="Typescript Logo"
           src="/svgs/typescript.svg"
         />
         <TechnologyCard name="Vite JS" alt="Vite Logo" src="/svgs/vitejs.svg" />
+        <TechnologyCard
+          name="Next JS"
+          alt="Next Logo"
+          src="/svgs/next-js.svg"
+        />
       </div>
       <ChevronDownButton />
     </div>
