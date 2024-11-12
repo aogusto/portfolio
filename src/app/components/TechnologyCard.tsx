@@ -20,18 +20,15 @@ const TechnologyCard = ({
   return (
     <motion.div
       className={`relative bg-secondary p-4 rounded-xl text-center font-semibold flex flex-col items-center justify-center ${hasUrlClass}`}
-      whileHover={{
-        boxShadow: '5px 5px 0 var(--shadow)',
-        translateY: -5,
-        translateX: -5,
-      }}
       animate={{
-        boxShadow: isHovered ? '5px 5px 0 var(--shadow)' : 'none',
+        boxShadow: isHovered
+          ? '12px 10px 0 var(--shadow)'
+          : '5px 5px 0 var(--shadow)',
+        translateY: isHovered ? -5 : 0,
+        translateX: isHovered ? -5 : 0,
       }}
       transition={{
         type: 'tween',
-        stiffness: 600,
-        damping: 20,
         duration: 0.1,
       }}
       onMouseEnter={() => setIsHovered(true)}
@@ -48,7 +45,7 @@ const TechnologyCard = ({
           alt={alt}
           width={96}
           height={96}
-          className="object-contain"
+          className="object-bottom"
         />
       </div>
       {name}

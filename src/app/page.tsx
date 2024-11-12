@@ -1,5 +1,11 @@
 'use client';
-import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
+import {
+  motion,
+  useMotionValue,
+  useTransform,
+  animate,
+  useAnimation,
+} from 'framer-motion';
 import { useEffect, useState } from 'react';
 import CursorBlinker from '@/app/components/CursorBlinker';
 import TechnologyCard from '@/app/components/TechnologyCard';
@@ -15,6 +21,20 @@ export default function Home() {
   const nameText = useTransform(rounded, (latest) =>
     (isCorrecting ? baseNameText : initialNameText).slice(0, latest)
   );
+
+  const controls = useAnimation();
+
+  useEffect(() => {
+    controls.start({
+      backgroundPosition: ['0% 50%', '100% 50%'],
+      transition: {
+        repeat: Infinity,
+        repeatType: 'reverse',
+        duration: 10,
+        ease: 'linear',
+      },
+    });
+  }, [controls]);
 
   useEffect(() => {
     const controlsStep1 = animate(count, initialNameText.length, {
@@ -45,7 +65,10 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="w-full min-h-screen h-auto flex flex-col sm:justify-center sm:items-center gap-8 p-8 text-center sm:text-start">
+      <motion.div
+        animate={controls}
+        className="w-full min-h-screen h-auto flex flex-col sm:justify-center sm:items-center gap-8 p-8 text-center sm:text-start bg-gradient-to-t from-background via-background to-shadow bg-[length:200%_200%]"
+      >
         <h1 className="text-5xl font-bold">
           <motion.span>{nameText}</motion.span>
           <CursorBlinker />
@@ -65,23 +88,29 @@ export default function Home() {
         <div
           className="grid grid-cols-2 gap-6
         sm:grid-cols-2
-        md:grid-cols-4
-        lg:grid-cols-4
+        md:grid-cols-5
+        lg:grid-cols-5
         pb-8
         sm:pb-0
       "
         >
           <TechnologyCard
-            name="React"
-            alt="React Logo"
-            src="/svgs/react-2.svg"
-            url="https://react.dev/"
-          />
-          <TechnologyCard
             name="Typescript"
             alt="Typescript Logo"
             src="/svgs/typescript.svg"
             url="https://www.typescriptlang.org/"
+          />
+          <TechnologyCard
+            name="Tailwind"
+            alt="Tailwind Logo"
+            src="/svgs/tailwind.svg"
+            url="https://tailwindcss.com/"
+          />
+          <TechnologyCard
+            name="React"
+            alt="React Logo"
+            src="/svgs/react-2.svg"
+            url="https://react.dev/"
           />
           <TechnologyCard
             name="Vite JS"
@@ -97,7 +126,7 @@ export default function Home() {
           />
         </div>
         <ChevronDownButton />
-      </div>
+      </motion.div>
       <div className="w-full h-auto flex flex-col sm:justify-center sm:items-center gap-8 p-8 text-center sm:text-start">
         <h1 className="text-5xl font-bold">
           <motion.span>Mais sobre mim:</motion.span>
