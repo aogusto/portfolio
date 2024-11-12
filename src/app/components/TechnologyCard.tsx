@@ -1,21 +1,46 @@
 'use client';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { useState } from 'react';
 
 const TechnologyCard = ({
   name,
   alt,
   src,
+  url,
 }: {
   name: string;
   alt: string;
   src: string;
+  url?: string;
 }) => {
+  const [isHovered, setIsHovered] = useState(false);
+  const hasUrlClass = url ? 'cursor-pointer' : '';
+
   return (
     <motion.div
-      className="relative bg-secondary p-4 rounded-xl text-center font-semibold flex flex-col items-center justify-center"
-      whileHover={{ scale: 1.1 }}
-      transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+      className={`relative bg-secondary p-4 rounded-xl text-center font-semibold flex flex-col items-center justify-center ${hasUrlClass}`}
+      whileHover={{
+        boxShadow: '5px 5px 0 var(--shadow)',
+        translateY: -5,
+        translateX: -5,
+      }}
+      animate={{
+        boxShadow: isHovered ? '5px 5px 0 var(--shadow)' : 'none',
+      }}
+      transition={{
+        type: 'tween',
+        stiffness: 600,
+        damping: 20,
+        duration: 0.1,
+      }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onClick={() => {
+        if (url) {
+          window.open(url, '_blank');
+        }
+      }}
     >
       <div className="w-24 h-24 mb-4">
         <Image

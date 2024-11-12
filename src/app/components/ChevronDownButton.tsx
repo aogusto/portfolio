@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 
 const ChevronDownButton = () => {
   return (
@@ -15,36 +14,29 @@ const ChevronDownButton = () => {
         ease: 'easeInOut',
         delay: 1,
       }}
+      onClick={() =>
+        window.scrollTo({
+          top: window.innerHeight,
+          behavior: 'smooth',
+        })
+      }
     >
-      <Image
-        src={'/svgs/Origami bird-pana.svg'}
-        alt={'Pássaro origami verde'}
-        width={100}
-        height={100}
-        objectFit="fill"
-      />
-      {/*<svg*/}
-      {/*  xmlns="http://www.w3.org/2000/svg"*/}
-      {/*  width="40"*/}
-      {/*  height="40"*/}
-      {/*  fill="none"*/}
-      {/*  viewBox="0 0 24 24"*/}
-      {/*  stroke="currentColor"*/}
-      {/*  className="text-primary"*/}
-      {/*>*/}
-      {/*  <path*/}
-      {/*    strokeLinecap="round"*/}
-      {/*    strokeLinejoin="round"*/}
-      {/*    strokeWidth="2"*/}
-      {/*    d="M19 9l-7 7-7-7"*/}
-      {/*  />*/}
-      {/*  <path*/}
-      {/*    strokeLinecap="round"*/}
-      {/*    strokeLinejoin="round"*/}
-      {/*    strokeWidth="2"*/}
-      {/*    d="M5 15l7-7 7 7"*/}
-      {/*  />*/}
-      {/*</svg>*/}
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="40"
+        height="40"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        className="text-primary"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M19 9l-7 7-7-7"
+        />
+      </svg>
     </motion.div>
   );
 };
