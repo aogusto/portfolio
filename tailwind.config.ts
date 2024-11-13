@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       boxShadow: {
         default: '5px 5px 0 var(--shadow)',
+        full: '0 0 0 12px var(--shadow)',
       },
       colors: {
         background: 'var(--background)',
