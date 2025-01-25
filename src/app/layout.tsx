@@ -6,7 +6,7 @@ import { Analytics } from '@vercel/analytics/next';
 
 export const metadata: Metadata = {
   title: 'Augusto Ribeiro',
-  description: 'Portfólio.',
+  description: 'Portfolio.',
 };
 
 export default function RootLayout({
@@ -14,12 +14,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const gaId = process.env.NEXT_PUBLIC_GA_ID;
   return (
     <html lang="pt">
       <body className="antialiased">
         {children}
         <SpeedInsights />
-        <GoogleAnalytics gaId="G-XLLB2HF41J" />
+        <GoogleAnalytics gaId={gaId ?? ''} />
         <Analytics />
       </body>
     </html>
