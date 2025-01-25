@@ -104,8 +104,8 @@ export default function Home() {
           </div>
           <div
             className="
-            w-4/6
-            grid grid-cols-3
+            sm:w-full md:w-3/6 lg:w-4/6
+            grid sm:grid-cols-1 xl:grid-cols-3
             gap-6
           "
           >
