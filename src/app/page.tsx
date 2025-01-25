@@ -176,7 +176,7 @@ export default function Home() {
             <TechnologyCard
               name="Resume"
               alt="Download Icon"
-              src="/svgs/download-icon.svg"
+              src="/pngs/download-icon.png"
               url="https://drive.google.com/file/d/1_loEp-VJ73PqWN0N22fnajRDTPAyC8-N/view?usp=sharing"
             />
           </div>
