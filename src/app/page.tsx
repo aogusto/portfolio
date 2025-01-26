@@ -110,15 +110,16 @@ export default function Home() {
           "
           >
             <ExperienceCard
-              logo="/pngs/maker-logo.png"
-              altLogo="Maker Logo"
-              link="https://makerrobotics.com.br/"
-              description="Developed a web application for students to access and watch video
-              lessons, creating a user-friendly interface, implementing core
-              functionalities, and managing database interactions to ensure seamless
-              video playback and accessibility using"
-              highlight="JavaScript, Angular and SaSS."
-              date="SEPTEMBER 2021 - MARCH 2022"
+              logo="/pngs/napp-logo.png"
+              altLogo="Napp Logo"
+              link="https://www.nappsolutions.com.br/"
+              description="Currently developing and maintaining a platform that integrates with
+              pharmacy software to manage and synchronize pharmacist stock with
+              various apps. Additionally, I am responsible for building and enhancing
+              the web admin page for efficient platform management using"
+              highlight="React, Material UI, TypeScript, Vite, and integrating APIs from a
+              Golang backend."
+              date="MAY 2023 - PRESENT"
             />
             <ExperienceCard
               logo="/pngs/napp-logo.png"
@@ -133,16 +134,15 @@ export default function Home() {
               date="MARCH 2022 - MAY 2023"
             />
             <ExperienceCard
-              logo="/pngs/napp-logo.png"
-              altLogo="Napp Logo"
-              link="https://www.nappsolutions.com.br/"
-              description="Currently developing and maintaining a platform that integrates with
-              pharmacy software to manage and synchronize pharmacist stock with
-              various apps. Additionally, I am responsible for building and enhancing
-              the web admin page for efficient platform management using"
-              highlight="React, Material UI, TypeScript, Vite, and integrating APIs from a
-              Golang backend."
-              date="MAY 2023 - PRESENT"
+              logo="/pngs/maker-logo.png"
+              altLogo="Maker Logo"
+              link="https://makerrobotics.com.br/"
+              description="Developed a web application for students to access and watch video
+              lessons, creating a user-friendly interface, implementing core
+              functionalities, and managing database interactions to ensure seamless
+              video playback and accessibility using"
+              highlight="JavaScript, Angular and SaSS."
+              date="SEPTEMBER 2021 - MARCH 2022"
             />
           </div>
           <ChevronDownButton />
