@@ -5,7 +5,7 @@ import CursorBlinker from '@/app/components/CursorBlinker';
 import TechnologyCard from '@/app/components/TechnologyCard';
 import ChevronDownButton from '@/app/components/ChevronDownButton';
 import ExperienceCard from '@/app/components/ExperienceCard';
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import { DotLottieReact, DotLottie } from '@lottiefiles/dotlottie-react';
 
 export default function Home() {
   const baseNameText = 'Hello, my name is Augusto!' as string;
@@ -17,7 +17,7 @@ export default function Home() {
     (isCorrecting ? baseNameText : initialNameText).slice(0, latest)
   );
 
-  const lottieRef = useRef<any>(null);
+  const lottieRef = useRef<DotLottie | null>(null);
 
   useEffect(() => {
     const controlsStep1 = animate(count, initialNameText.length, {
