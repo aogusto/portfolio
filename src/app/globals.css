@@ -17,3 +17,9 @@ body {
   background: var(--background);
   font-family: Montserrat, sans-serif;
 }
+
+svg {
+  display: block;
+  height: 100%;
+  width: 100%;
+}

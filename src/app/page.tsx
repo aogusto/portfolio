@@ -1,21 +1,23 @@
 'use client';
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import CursorBlinker from '@/app/components/CursorBlinker';
 import TechnologyCard from '@/app/components/TechnologyCard';
 import ChevronDownButton from '@/app/components/ChevronDownButton';
 import ExperienceCard from '@/app/components/ExperienceCard';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 export default function Home() {
   const baseNameText = 'Hello, my name is Augusto!' as string;
   const initialNameText = 'Hello, my name is Ausguto!' as string;
   const count = useMotionValue(0);
   const [isCorrecting, setIsCorrecting] = useState(false);
-
   const rounded = useTransform(count, (latest) => Math.round(latest));
   const nameText = useTransform(rounded, (latest) =>
     (isCorrecting ? baseNameText : initialNameText).slice(0, latest)
   );
+
+  const lottieRef = useRef<any>(null);
 
   useEffect(() => {
     const controlsStep1 = animate(count, initialNameText.length, {
@@ -30,11 +32,17 @@ export default function Home() {
             ease: 'easeInOut',
             onComplete: () => {
               setIsCorrecting(true);
-              animate(count, baseNameText.length, {
+              const controlsStep3 = animate(count, baseNameText.length, {
                 type: 'tween',
                 duration: 1.5,
                 ease: 'easeInOut',
+                onComplete: () => {
+                  if (lottieRef.current) {
+                    lottieRef.current.play();
+                  }
+                },
               });
+              return () => controlsStep3.stop();
             },
           });
         }, 1200);
@@ -42,11 +50,33 @@ export default function Home() {
     });
 
     return () => controlsStep1.stop();
-  }, []);
+  }, [count, initialNameText.length, baseNameText.length]);
 
   return (
     <>
       <div className="flex flex-col items-center">
+        <motion.div
+          className="max-w-72 relative top-8"
+          animate={{
+            y: [0, -8, 0],
+          }}
+          transition={{
+            duration: 3,
+            ease: 'easeInOut',
+            repeat: Infinity,
+            repeatType: 'loop',
+            delay: 0.5,
+          }}
+        >
+          <DotLottieReact
+            src="https://lottie.host/f7e7e568-832e-4392-8144-3bdd490de12c/EKS5GQDT4k.lottie"
+            className="w-full h-auto"
+            autoplay={false}
+            dotLottieRefCallback={(dotLottie) => {
+              lottieRef.current = dotLottie;
+            }}
+          />
+        </motion.div>
         <div className="w-full min-h-screen h-auto flex flex-col sm:justify-center sm:items-center gap-8 p-8 text-center sm:text-start">
           <h1 className="text-4xl sm:text-5xl font-bold">
             <motion.span>{nameText}</motion.span>

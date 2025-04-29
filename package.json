@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@lottiefiles/dotlottie-react": "^0.13.4",
     "@next/third-parties": "^15.0.3",
     "@vercel/analytics": "^1.4.0",
     "@vercel/speed-insights": "^1.0.14",

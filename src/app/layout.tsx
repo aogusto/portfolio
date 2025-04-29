@@ -3,6 +3,7 @@ import './globals.css';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { Analytics } from '@vercel/analytics/next';
+import WaveLinesCanvas from '@/app/components/WaveLinesCanvas';
 
 export const metadata: Metadata = {
   title: 'Augusto Ribeiro',
@@ -18,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="pt">
       <body className="antialiased">
-        {children}
+        <WaveLinesCanvas>{children}</WaveLinesCanvas>
         <SpeedInsights />
         <GoogleAnalytics gaId={gaId ?? ''} />
         <Analytics />
