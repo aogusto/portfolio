@@ -19,6 +19,8 @@ export default function Home() {
 
   const lottieRef = useRef<DotLottie | null>(null);
 
+  const [isLottiePlaying, setIsLottiePlaying] = useState(false);
+
   useEffect(() => {
     const controlsStep1 = animate(count, initialNameText.length, {
       type: 'tween',
@@ -39,6 +41,8 @@ export default function Home() {
                 onComplete: () => {
                   if (lottieRef.current) {
                     lottieRef.current.play();
+
+                    setIsLottiePlaying(true);
                   }
                 },
               });
@@ -52,11 +56,38 @@ export default function Home() {
     return () => controlsStep1.stop();
   }, [count, initialNameText.length, baseNameText.length]);
 
+  useEffect(() => {
+    const lottieInstance = lottieRef.current;
+    if (lottieInstance) {
+      const handleComplete = () => {
+        setIsLottiePlaying(false);
+      };
+
+      lottieInstance.addEventListener('complete', handleComplete);
+
+      return () => {
+        lottieInstance.removeEventListener('complete', handleComplete);
+      };
+    }
+  }, [lottieRef.current]);
+
+  const handleLottieClick = () => {
+    if (isLottiePlaying || !lottieRef.current) {
+      console.log('Lottie já está tocando ou não está pronta.');
+      return;
+    }
+
+    console.log('Iniciando reprodução da Lottie...');
+
+    setIsLottiePlaying(true);
+    lottieRef.current.play();
+  };
+
   return (
     <>
       <div className="flex flex-col items-center">
         <motion.div
-          className="max-w-72 relative top-8"
+          className="max-w-72 relative top-8 cursor-pointer"
           animate={{
             y: [0, -8, 0],
           }}
@@ -67,9 +98,10 @@ export default function Home() {
             repeatType: 'loop',
             delay: 0.5,
           }}
+          onClick={handleLottieClick}
         >
           <DotLottieReact
-            src="https://lottie.host/f7e7e568-832e-4392-8144-3bdd490de12c/EKS5GQDT4k.lottie"
+            src="/f7e7e568-832e-4392-8144-3bdd490de12c/EKS5GQDT4k.lottie"
             className="w-full h-auto"
             autoplay={false}
             dotLottieRefCallback={(dotLottie) => {
