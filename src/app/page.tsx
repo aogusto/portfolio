@@ -101,7 +101,7 @@ export default function Home() {
           onClick={handleLottieClick}
         >
           <DotLottieReact
-            src="/f7e7e568-832e-4392-8144-3bdd490de12c/EKS5GQDT4k.lottie"
+            src="https://lottie.host/f7e7e568-832e-4392-8144-3bdd490de12c/EKS5GQDT4k.lottie"
             className="w-full h-auto"
             autoplay={false}
             dotLottieRefCallback={(dotLottie) => {
