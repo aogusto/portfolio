@@ -11,6 +11,7 @@ const config: Config = {
       boxShadow: {
         default: '5px 5px 0 var(--shadow)',
         full: '0 0 0 12px var(--shadow)',
+        glow: '0 0 20px rgba(124, 119, 198, 0.3)',
       },
       colors: {
         background: 'var(--background)',
@@ -18,6 +19,11 @@ const config: Config = {
         primary: 'var(--primary)',
         secondary: 'var(--secondary)',
         shadow: 'var(--shadow)',
+        // Cores adicionais para harmonia com o background
+        'purple-light': '#9d97d1',
+        'blue-deep': '#1a1a2e',
+        'cyan-bright': '#78dbff',
+        'purple-glow': '#ff77c6',
       },
     },
   },
