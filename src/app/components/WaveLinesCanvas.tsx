@@ -33,7 +33,6 @@ const WaveLinesCanvas: React.FC<WaveLinesCanvasProps> = ({ children }) => {
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="aurora-blob aurora-blob-1" />
         <div className="aurora-blob aurora-blob-2" />
-        <div className="aurora-blob aurora-blob-3" />
       </div>
 
       {/* ── Cursor spotlight ── */}
@@ -47,7 +46,7 @@ const WaveLinesCanvas: React.FC<WaveLinesCanvasProps> = ({ children }) => {
           x: spotlightX,
           y: spotlightY,
           background:
-            'radial-gradient(circle, rgba(74,222,128,0.09) 0%, rgba(74,222,128,0.03) 45%, transparent 70%)',
+            'radial-gradient(circle, rgba(99,102,241,0.09) 0%, rgba(99,102,241,0.03) 45%, transparent 70%)',
         }}
       />
 
