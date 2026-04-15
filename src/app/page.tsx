@@ -13,7 +13,15 @@ import TechnologyCard from '@/app/components/TechnologyCard';
 import ChevronDownButton from '@/app/components/ChevronDownButton';
 import ExperienceCard from '@/app/components/ExperienceCard';
 import ProjectCard from '@/app/components/ProjectCard';
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import dynamic from 'next/dynamic';
+
+const DotLottieReact = dynamic(
+  () =>
+    import('@lottiefiles/dotlottie-react').then((m) => ({
+      default: m.DotLottieReact,
+    })),
+  { ssr: false }
+);
 
 export default function Home() {
   const baseNameText = 'Hello, my name is Augusto!' as string;
