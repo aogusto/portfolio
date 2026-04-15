@@ -8,6 +8,9 @@ import WaveLinesCanvas from '@/app/components/WaveLinesCanvas';
 export const metadata: Metadata = {
   title: 'Augusto Ribeiro',
   description: 'Portfolio.',
+  icons: {
+    icon: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({
@@ -18,7 +21,7 @@ export default function RootLayout({
   const gaId = process.env.NEXT_PUBLIC_GA_ID;
   return (
     <html lang="pt">
-      <body className="antialiased">
+      <body className="antialiased" suppressHydrationWarning>
         <WaveLinesCanvas>{children}</WaveLinesCanvas>
         <SpeedInsights />
         <GoogleAnalytics gaId={gaId ?? ''} />

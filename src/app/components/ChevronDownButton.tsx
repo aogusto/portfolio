@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 const ChevronDownButton = () => {
   return (
     <motion.div
-      className="justify-center items-center cursor-pointer hidden xl:flex"
+      className="justify-center items-center cursor-pointer hidden xl:flex w-6 h-6"
       animate={{
         y: [0, -20, 0, -15, 0],
       }}

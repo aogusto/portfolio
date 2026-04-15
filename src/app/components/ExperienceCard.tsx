@@ -1,5 +1,5 @@
+'use client';
 import { motion } from 'framer-motion';
-import { useState } from 'react';
 import Image from 'next/image';
 
 const ExperienceCard = ({
@@ -9,6 +9,7 @@ const ExperienceCard = ({
   link,
   altLogo,
   date,
+  role,
 }: {
   description: string;
   logo: string;
@@ -16,33 +17,40 @@ const ExperienceCard = ({
   link: string;
   altLogo: string;
   date: string;
+  role?: string;
 }) => {
-  const [isHovered, setIsHovered] = useState(false);
   return (
     <motion.div
-      className={`w-full bg-secondary p-4 rounded-xl flex flex-col gap-1`}
-      transition={{
-        type: 'tween',
-        duration: 0.1,
+      className="w-full bg-secondary border border-white/[0.07] rounded-2xl p-6 flex flex-col gap-4"
+      whileHover={{
+        boxShadow:
+          '0 0 0 1px rgba(74, 222, 128, 0.25), 0 0 24px rgba(74, 222, 128, 0.07)',
+        y: -3,
       }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      animate={{
-        boxShadow: !isHovered
-          ? '12px 10px 0 var(--shadow)'
-          : '5px 5px 0 var(--shadow)',
-        translateY: !isHovered ? -5 : 0,
-        translateX: !isHovered ? -5 : 0,
-      }}
+      transition={{ type: 'tween', duration: 0.15 }}
     >
-      <p className="flex justify-center w-full">
-        <a href={link} target="_blank" className="w-fit">
-          <Image src={logo} alt={altLogo} width={100} height={100} />
+      <div className="flex items-center justify-between gap-3">
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="shrink-0"
+        >
+          <Image
+            src={logo}
+            alt={altLogo}
+            width={56}
+            height={56}
+            className="object-contain"
+          />
         </a>
-      </p>
-      <p className="text-center text-primary font-semibold">({date})</p>
-      <p>
-        {description} <span className="text-primary">{highlight}</span>
+        <span className="text-xs font-semibold text-primary bg-primary/10 border border-primary/20 rounded-full px-3 py-1 whitespace-nowrap">
+          {date}
+        </span>
+      </div>
+      {role && <p className="text-base font-bold text-foreground">{role}</p>}
+      <p className="text-base text-muted leading-relaxed">
+        {description} <span className="text-primary/90">{highlight}</span>
       </p>
     </motion.div>
   );

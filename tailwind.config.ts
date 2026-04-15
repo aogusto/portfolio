@@ -8,15 +8,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      boxShadow: {
-        default: '5px 5px 0 var(--shadow)',
-        full: '0 0 0 12px var(--shadow)',
-      },
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
         primary: 'var(--primary)',
         secondary: 'var(--secondary)',
+        muted: 'var(--muted)',
         shadow: 'var(--shadow)',
       },
     },

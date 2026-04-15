@@ -1,54 +1,52 @@
 'use client';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { useState } from 'react';
 
 const TechnologyCard = ({
   name,
   alt,
   src,
   url,
+  wide = false,
+  lightBg = false,
 }: {
   name: string;
   alt: string;
   src: string;
   url?: string;
+  wide?: boolean;
+  lightBg?: boolean;
 }) => {
-  const [isHovered, setIsHovered] = useState(false);
-  const hasUrlClass = url ? 'cursor-pointer' : '';
-
   return (
     <motion.div
-      className={`relative bg-secondary p-4 rounded-xl text-center font-semibold flex flex-col items-center justify-center ${hasUrlClass}`}
-      animate={{
-        boxShadow: isHovered
-          ? '12px 10px 0 var(--shadow)'
-          : '5px 5px 0 var(--shadow)',
-        translateY: isHovered ? -5 : 0,
-        translateX: isHovered ? -5 : 0,
+      className={`
+        bg-secondary border border-white/[0.07] rounded-2xl
+        font-semibold cursor-pointer select-none
+        ${wide ? 'flex flex-row items-center gap-4 p-4' : 'flex flex-col items-center justify-center p-5 gap-3'}
+      `}
+      whileHover={{
+        boxShadow:
+          '0 0 0 1px rgba(74, 222, 128, 0.25), 0 0 20px rgba(74, 222, 128, 0.08)',
+        y: -3,
       }}
-      transition={{
-        type: 'tween',
-        duration: 0.1,
-      }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      whileTap={{ scale: 0.97 }}
+      transition={{ type: 'tween', duration: 0.15 }}
       onClick={() => {
-        if (url) {
-          window.open(url, '_blank');
-        }
+        if (url) window.open(url, '_blank');
       }}
     >
-      <div className="w-24 h-24 mb-4">
+      <div
+        className={`${wide ? 'w-9 h-9 shrink-0' : 'w-14 h-14'} ${lightBg ? 'bg-white rounded-full p-1' : ''}`}
+      >
         <Image
           src={src}
           alt={alt}
-          width={96}
-          height={96}
-          className="object-bottom"
+          width={56}
+          height={56}
+          className="object-contain w-full h-full"
         />
       </div>
-      {name}
+      <span className={wide ? 'text-base' : 'text-sm'}>{name}</span>
     </motion.div>
   );
 };
