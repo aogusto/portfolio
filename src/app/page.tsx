@@ -10,7 +10,6 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import CursorBlinker from '@/app/components/CursorBlinker';
 import TechnologyCard from '@/app/components/TechnologyCard';
-import ChevronDownButton from '@/app/components/ChevronDownButton';
 import ExperienceCard from '@/app/components/ExperienceCard';
 import ProjectCard from '@/app/components/ProjectCard';
 import dynamic from 'next/dynamic';
@@ -145,7 +144,37 @@ export default function Home() {
             </div>
           </div>
 
-          <ChevronDownButton />
+          <div className="flex flex-col gap-3">
+            <p className="text-xs font-semibold text-muted uppercase tracking-widest">
+              CI / CD
+            </p>
+            <div className="grid grid-cols-3 gap-3">
+              <TechnologyCard
+                name="Vercel"
+                alt="Vercel Logo"
+                src="/svgs/vercel-icon-logo.svg"
+                url="https://vercel.com/"
+                wide
+                lightBg
+              />
+              <TechnologyCard
+                name="Railway"
+                alt="Railway Logo"
+                src="/svgs/railway.svg"
+                url="https://railway.app/"
+                wide
+                lightBg
+              />
+              <TechnologyCard
+                name="Cloud Build"
+                alt="Cloud Build Logo"
+                src="/svgs/cloud-build-logo.svg"
+                url="https://cloud.google.com/build"
+                wide
+              />
+            </div>
+          </div>
+
         </div>
 
         {/* Right: avatar → photo */}
@@ -231,38 +260,37 @@ export default function Home() {
           </h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          <ExperienceCard
-            logo="/pngs/varyonn-logo.png"
-            altLogo="Varyonn Logo"
-            link="https://varyonn.com.br/"
-            role="Head of Frontend & Co-Founder"
-            description="Co-founder of Varyonn, leading frontend development of CRMs and
+          <div className="sm:col-span-2">
+            <ExperienceCard
+              logo="/pngs/varyonn-logo.png"
+              altLogo="Varyonn Logo"
+              link="https://varyonn.com.br/"
+              role="Head of Frontend & Co-Founder"
+              description="Co-founder of Varyonn, leading frontend development of CRMs and
               custom digital solutions. Key project: Pokett, a financial assistant
               bot for Gen Z — developed the admin panel and public frontend using"
-            highlight="Next.js, React, TypeScript, and Tailwind CSS."
-            date="NOV 2025 – NOW"
-          />
+              highlight="Next.js, React, TypeScript, and Tailwind CSS."
+              date="NOV 2025 – NOW"
+            />
+          </div>
           <ExperienceCard
             logo="/pngs/napp-logo.png"
             altLogo="Napp Logo"
             link="https://www.nappsolutions.com.br/"
-            description="Developing and maintaining a platform that integrates with pharmacy
-              software to synchronize stock with various apps. Building and enhancing
-              the web admin page using"
             role="Senior Frontend Developer"
+            currentRoleDate="JUN 2023 – NOW"
+            description="Developing and maintaining a platform that integrates with pharmacy
+                software to synchronize stock with various apps. Building and enhancing
+                the web admin page using"
             highlight="React, Material UI, TypeScript, Vite, and a Golang backend."
-            date="MAY 2023 – NOW"
-          />
-          <ExperienceCard
-            logo="/pngs/napp-logo.png"
-            altLogo="Napp Logo"
-            link="https://www.nappsolutions.com.br/"
-            role="Integration Engineer"
-            description="Connecting shopping centers and pharmacies to install tools that
-              integrate with pharmacist databases, ensuring seamless data
-              synchronization using"
-            highlight="C#, Python, SQL, MySQL, and PostgreSQL."
-            date="MAR 2022 – MAY 2023"
+            date="MAR 2022 – NOW"
+            previousRole={{
+              role: 'Integration Engineer',
+              date: 'MAR 2022 – MAY 2023',
+              description:
+                'Connecting shopping centers and pharmacies to install tools that integrate with pharmacist databases, ensuring seamless data synchronization using',
+              highlight: 'C#, Python, SQL, MySQL, and PostgreSQL.',
+            }}
           />
           <ExperienceCard
             logo="/pngs/maker-logo.png"
