@@ -249,6 +249,7 @@ export default function Home() {
             description="Developing and maintaining a platform that integrates with pharmacy
               software to synchronize stock with various apps. Building and enhancing
               the web admin page using"
+            role="Senior Frontend Developer"
             highlight="React, Material UI, TypeScript, Vite, and a Golang backend."
             date="MAY 2023 – NOW"
           />
@@ -256,6 +257,7 @@ export default function Home() {
             logo="/pngs/napp-logo.png"
             altLogo="Napp Logo"
             link="https://www.nappsolutions.com.br/"
+            role="Integration Engineer"
             description="Connecting shopping centers and pharmacies to install tools that
               integrate with pharmacist databases, ensuring seamless data
               synchronization using"
@@ -266,6 +268,7 @@ export default function Home() {
             logo="/pngs/maker-logo.png"
             altLogo="Maker Logo"
             link="https://makerrobotics.com.br/"
+            role="Frontend Intern"
             description="Developed a web application for students to access video lessons,
               implementing core functionalities and database interactions using"
             highlight="JavaScript, Angular, and SaSS."
