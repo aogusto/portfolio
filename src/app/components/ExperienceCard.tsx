@@ -56,7 +56,7 @@ const ExperienceCard = ({
             className="object-contain"
           />
         </a>
-        <span className="text-xs font-semibold text-primary bg-primary/10 border border-primary/20 rounded-full px-3 py-1 whitespace-nowrap">
+        <span className="text-[11px] font-semibold text-primary/90 bg-white/[0.03] backdrop-blur-xl border border-white/[0.08] shadow-[0_4px_12px_rgba(0,0,0,0.1),inset_0_1px_1px_rgba(255,255,255,0.15)] rounded-full px-3.5 py-1.5 whitespace-nowrap tracking-wider">
           {date}
         </span>
       </div>
@@ -101,7 +101,7 @@ const ExperienceCard = ({
                   </p>
                 )}
                 {currentRoleDate && (
-                  <span className="text-xs text-muted/80 whitespace-nowrap mt-0.5 shrink-0">
+                  <span className="text-[10px] font-medium text-primary/80 bg-white/[0.02] backdrop-blur-md border border-white/[0.06] shadow-[0_2px_8px_rgba(0,0,0,0.1),inset_0_1px_1px_rgba(255,255,255,0.1)] rounded-full px-2.5 py-1 whitespace-nowrap shrink-0">
                     {currentRoleDate}
                   </span>
                 )}
@@ -121,7 +121,7 @@ const ExperienceCard = ({
                 <p className="text-sm font-semibold text-foreground/40 leading-snug">
                   {previousRole.role}
                 </p>
-                <span className="text-xs text-muted/50 whitespace-nowrap mt-0.5 shrink-0">
+                <span className="text-[10px] font-medium text-muted/70 bg-white/[0.02] backdrop-blur-md border border-white/[0.04] shadow-[0_2px_8px_rgba(0,0,0,0.1),inset_0_1px_1px_rgba(255,255,255,0.05)] rounded-full px-2.5 py-1 whitespace-nowrap shrink-0">
                   {previousRole.date}
                 </span>
               </div>

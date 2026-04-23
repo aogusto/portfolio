@@ -603,7 +603,7 @@ export default function Home() {
               altLogo="Napp Logo"
               link="https://www.nappsolutions.com.br/"
               role="Senior Frontend Developer"
-              currentRoleDate="JUN 2023 – NOW"
+              currentRoleDate="JUN 2023"
               description="Developing and maintaining a platform that integrates with pharmacy
                   software to synchronize stock with various apps. Building and enhancing
                   the web admin page using"
