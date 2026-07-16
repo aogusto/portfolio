@@ -25,6 +25,8 @@ import {
   SiGoogledrive,
   SiGooglecloud,
   SiRailway,
+  SiClaude,
+  SiModelcontextprotocol,
 } from 'react-icons/si';
 import { FaLinkedin } from 'react-icons/fa';
 import { LuTreePalm } from 'react-icons/lu';
@@ -81,7 +83,7 @@ export default function Home() {
           <div className="flex flex-col gap-7 lg:w-[55%] order-2 lg:order-1">
             <div className="flex flex-col gap-4">
               <p className="text-primary font-semibold text-xs tracking-[0.2em] uppercase">
-                Frontend Developer &amp; Co-Founder
+                Frontend Engineer &amp; Co-Founder
               </p>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight relative">
                 {/* Invisible spacer — reserves the height of the full final text */}
@@ -177,6 +179,26 @@ export default function Home() {
                   name="Express"
                   icon={<SiExpress size={40} />}
                   url="https://expressjs.com/"
+                  wide
+                />
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-3">
+              <p className="text-xs font-semibold text-muted uppercase tracking-widest">
+                AI
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                <TechnologyCard
+                  name="MCP"
+                  icon={<SiModelcontextprotocol size={40} />}
+                  url="https://modelcontextprotocol.io/"
+                  wide
+                />
+                <TechnologyCard
+                  name="Claude"
+                  icon={<SiClaude size={40} />}
+                  url="https://www.anthropic.com/claude"
                   wide
                 />
               </div>
@@ -313,7 +335,7 @@ export default function Home() {
             logo="/pngs/napp-logo.png"
             altLogo="Napp Logo"
             link="https://www.nappsolutions.com.br/"
-            role="Senior Frontend Developer"
+            role="Senior Frontend Engineer"
             currentRoleDate="JUN 2023"
             description="Developing and maintaining a platform that integrates with pharmacy
                 software to synchronize stock with various apps. Building and enhancing
