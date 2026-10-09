@@ -7,7 +7,8 @@ import WaveLinesCanvas from '@/app/components/WaveLinesCanvas';
 
 export const metadata: Metadata = {
   title: 'Augusto Ribeiro',
-  description: 'Portfolio.',
+  description:
+    'Software Engineer specialized in frontend — architecture, state management, API integration, and client-side performance.',
   icons: {
     icon: '/favicon.svg',
   },

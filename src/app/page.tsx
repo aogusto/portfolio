@@ -83,7 +83,7 @@ export default function Home() {
           <div className="flex flex-col gap-7 lg:w-[55%] order-2 lg:order-1">
             <div className="flex flex-col gap-4">
               <p className="text-primary font-semibold text-xs tracking-[0.2em] uppercase">
-                Frontend Engineer &amp; Co-Founder
+                Software Engineer &amp; Co-Founder
               </p>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight relative">
                 {/* Invisible spacer — reserves the height of the full final text */}
@@ -97,14 +97,12 @@ export default function Home() {
                 </span>
               </h1>
               <p className="text-muted text-base lg:text-lg leading-relaxed max-w-lg">
-                Building performant and scalable web experiences. Currently
-                leading frontend at{' '}
-                <span className="text-foreground font-semibold">Varyonn</span>{' '}
-                and developing at{' '}
-                <span className="text-foreground font-semibold">
-                  Napp Solutions
-                </span>
-                .
+                Software engineer specialized in frontend, from architecture and
+                state management to API integration and client-side performance.
+                Currently building at{' '}
+                <span className="text-foreground font-semibold">Zachcart</span>{' '}
+                and leading frontend at{' '}
+                <span className="text-foreground font-semibold">Varyonn</span>.
               </p>
             </div>
 
@@ -318,35 +316,44 @@ export default function Home() {
           </h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          <div className="sm:col-span-2">
-            <ExperienceCard
-              logo="/pngs/varyonn-logo.png"
-              altLogo="Varyonn Logo"
-              link="https://varyonn.com.br/"
-              role="Head of Frontend & Co-Founder"
-              description="Co-founder of Varyonn, leading frontend development of CRMs and
-              custom digital solutions. Key project: Pokett, a financial assistant
-              bot for Gen Z — developed the admin panel and public frontend using"
-              highlight="Next.js, React, TypeScript, and Tailwind CSS."
-              date="NOV 2025 – NOW"
-            />
-          </div>
+          <ExperienceCard
+            logo="/svgs/zachcart-logo.svg"
+            altLogo="Zachcart Logo"
+            link="https://www.zachcart.com/"
+            role="Senior Frontend Engineer"
+            description="Building the frontend of a platform that syncs independent
+              retailers' real-time POS inventory to Google, local search, delivery
+              apps, and AI assistants using"
+            highlight="Next.js, React, TypeScript, and Tailwind CSS."
+            date="SEP 2026 – NOW"
+          />
+          <ExperienceCard
+            logo="/pngs/varyonn-logo.png"
+            altLogo="Varyonn Logo"
+            link="https://varyonn.com.br/"
+            role="Head of Frontend & Co-Founder"
+            description="Co-founder of Varyonn, leading frontend development of CRMs and
+            custom digital solutions. Key project: Pokett, a financial assistant
+            bot for Gen Z — developed the admin panel and public frontend using"
+            highlight="Next.js, React, TypeScript, and Tailwind CSS."
+            date="NOV 2025 – NOW"
+          />
           <ExperienceCard
             logo="/pngs/napp-logo.png"
             altLogo="Napp Logo"
             link="https://www.nappsolutions.com.br/"
             role="Senior Frontend Engineer"
             currentRoleDate="JUN 2023"
-            description="Developing and maintaining a platform that integrates with pharmacy
-                software to synchronize stock with various apps. Building and enhancing
+            description="Developed and maintained a platform that integrates with pharmacy
+                software to synchronize stock with various apps. Built and enhanced
                 the web admin page using"
             highlight="React, Material UI, TypeScript, Vite, and a Golang backend."
-            date="MAR 2022 – NOW"
+            date="MAR 2022 – SEP 2026"
             previousRole={{
               role: 'Integration Engineer',
               date: 'MAR 2022',
               description:
-                'Connecting shopping centers and pharmacies to install tools that integrate with pharmacist databases, ensuring seamless data synchronization using',
+                'Connected shopping centers and pharmacies by installing tools that integrate with pharmacist databases, ensuring seamless data synchronization using',
               highlight: 'C#, Python, SQL, MySQL, and PostgreSQL.',
             }}
           />
@@ -359,6 +366,30 @@ export default function Home() {
               implementing core functionalities and database interactions using"
             highlight="JavaScript, Angular, and SaSS."
             date="SEP 2021 – MAR 2022"
+          />
+        </div>
+      </section>
+
+      {/* ── EDUCATION ── */}
+      <section
+        id="education"
+        className="max-w-6xl mx-auto w-full px-6 lg:px-12 py-24 flex flex-col gap-10"
+      >
+        <div className="flex flex-col gap-2">
+          <p className="text-primary text-xs font-bold tracking-[0.2em] uppercase">
+            Education
+          </p>
+          <h2 className="text-3xl lg:text-4xl font-bold">Where I study</h2>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <ExperienceCard
+            logo="/svgs/univesp-logo.svg"
+            altLogo="Univesp Logo"
+            link="https://univesp.br/"
+            role="B.S. in Computer Engineering"
+            description="Undergraduate degree at Univesp, the Virtual University of the
+              State of São Paulo."
+            date="JUL 2025 – JUL 2030"
           />
         </div>
       </section>

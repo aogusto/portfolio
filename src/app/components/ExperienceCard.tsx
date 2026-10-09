@@ -22,7 +22,7 @@ const ExperienceCard = ({
 }: {
   description: string;
   logo: string;
-  highlight: string;
+  highlight?: string;
   link: string;
   altLogo: string;
   date: string;
@@ -30,6 +30,8 @@ const ExperienceCard = ({
   currentRoleDate?: string;
   previousRole?: RoleEntry;
 }) => {
+  const isOngoing = date.endsWith('NOW');
+
   return (
     <motion.div
       className="w-full bg-secondary border border-white/[0.07] rounded-2xl p-6 flex flex-col gap-4"
@@ -88,9 +90,11 @@ const ExperienceCard = ({
 
           {/* Current role */}
           <div className="flex gap-4 pb-6">
-            {/* Dot with ping ring */}
+            {/* Dot — ping ring only while the stint is ongoing */}
             <div className="relative z-10 mt-[3px] shrink-0 w-3.5 h-3.5">
-              <span className="absolute inset-0 rounded-full bg-primary/40 animate-ping" />
+              {isOngoing && (
+                <span className="absolute inset-0 rounded-full bg-primary/40 animate-ping" />
+              )}
               <span className="relative block rounded-full w-full h-full bg-primary/25 border-2 border-primary/70 shadow-[0_0_10px_rgba(74,222,128,0.4)]" />
             </div>
             <div className="flex-1 min-w-0 flex flex-col gap-1.5">
@@ -141,7 +145,13 @@ const ExperienceCard = ({
             <p className="text-base font-bold text-foreground">{role}</p>
           )}
           <p className="text-base text-muted leading-relaxed">
-            {description} <span className="text-primary/90">{highlight}</span>
+            {description}
+            {highlight && (
+              <>
+                {' '}
+                <span className="text-primary/90">{highlight}</span>
+              </>
+            )}
           </p>
         </>
       )}
